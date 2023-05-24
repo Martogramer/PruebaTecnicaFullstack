@@ -44,6 +44,8 @@ app.get('/', (req, res) => {
   res.send('¡Hola, mundo!');
 });
 
+const destinationRoutes = require('./routes/destinations');
+app.use('/destinations', destinationRoutes);
 
     // Conexión con Mongo
 const connectToDataBase = async () => {
