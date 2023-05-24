@@ -1,5 +1,5 @@
 const express = require('express');
-const mongose = require('mongoose')
+const mongoose = require('mongoose')
 
 const app = express();
 
@@ -58,7 +58,7 @@ const connectToDataBase = async () => {
             useFindAndModify: false
         };
 
-        await mongose.connect(dbUrl, dbOptions);
+        await mongoose.connect(dbUrl, dbOptions);
         console.log('Conexión establecida a MongoDB');
     } catch (error) {
         console.error('Error al conectar a la base de datos:', error);
