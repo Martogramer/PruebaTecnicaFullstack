@@ -1,6 +1,6 @@
 const express = require('express');
 const destinationRoutes = require('./routes/destinations');
-
+const cors = require('cors')
 const app = express();
 
 // configuracion para permitir cambiar HTML con metodo POST
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public')); // configuracion archivos estaticos
 app.use(express.json()); //  middleware para procesar datos JSON enviados desde el cliente.
-
+app.use(cors());
 app.use('/destinations', destinationRoutes);
 
-export default app;
+module.exports = app;

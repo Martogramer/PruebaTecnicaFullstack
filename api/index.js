@@ -1,7 +1,7 @@
-import app from "./app.js";
-import connectToDataBase from "./db.js"
+const app = require("./app.js");
+const connectToDataBase = require("./db.js")
 
-const port = 3000;
+const port = 3001;
 
 connectToDataBase()
     .then(() => {

@@ -1,4 +1,6 @@
-export default {
-    mongoURL: 'mongodb://localhost:27017/nombre_de_la_base_de_datos',
+module.exports = {
+    mongoURL: 'mongodb+srv://marto:martomarte@pranacolab.ayk4lgk.mongodb.net/?retryWrites=true&w=majority',
     secretKey: 'clave_secreta_para_jsonwebtoken'
   };
+
+  // mongodb+srv://marto:martomarte@pranacolab.ayk4lgk.mongodb.net/?retryWrites=true&w=majority

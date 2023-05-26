@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Destination = require('../models/destination');
+const Destination = require('../controllers/destController');
 
 // Ruta para obtener todos los destinos turísticos
 router.get('/', Destination.getDestinations);

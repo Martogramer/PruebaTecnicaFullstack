@@ -6,8 +6,6 @@ const connectToDataBase = async () => {
         const dbOptions = await mongoose.connect(config.mongoURL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useCreateIndex: true,
-            useFindAndModify: false
         });
 
         dbOptions.connection.on('connected', () => {
@@ -18,4 +16,4 @@ const connectToDataBase = async () => {
     };
 };
 
-export default connectToDataBase;
+module.exports = connectToDataBase;

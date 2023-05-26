@@ -4,7 +4,9 @@
 	"description": "Simple react app based in MERN stack",
 	"main": "server.js",
 	"dependencies": {
+		"cors": "^2.8.5",
 		"express": "^4.18.2",
+		"mongodb": "^5.5.0",
 		"mongoose": "latest"
 	}
 }
