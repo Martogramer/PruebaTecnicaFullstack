@@ -23,7 +23,7 @@ export const getDestinationById = async (id) => {
 // Función para buscar destinos turísticos por nombre o ubicación
 export const searchDestinations = async (query) => {
   const response = await axios.get(`${BASE_URL}/destinations`, {
-    params: { search: query },
+    params: { name: query },
   });
   return response.data;
 };
