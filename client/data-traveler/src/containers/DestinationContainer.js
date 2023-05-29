@@ -6,7 +6,7 @@ import { fetchDestinations } from '../state/actions/destinationActions';
 import { selectDestinations } from '../state/selectors/destinationSelectors';
 import SelectSearchResults from '../components/features/SelectSearchResults';
 
-const DestinationContainer = () => {
+const DestinationContainer = ({ children }) => {
   const dispatch = useDispatch();
   const destinations = useSelector(selectDestinations);
 
@@ -15,13 +15,17 @@ const DestinationContainer = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h2>Agregar</h2>
-      <DestinationForm />
-      <h2>Busqueda</h2>
-      <SelectSearchResults />
-      <h2>Destinos turísticos</h2>
-      <DestinationList destinations={destinations} />
+    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md p-4">
+      <h2 className="text-xl font-bold mb-4">Agregar</h2>
+      <div className="mb-4">
+        <DestinationForm />
+      </div>
+      <h2 className="text-xl font-bold mb-4">Búsqueda</h2>
+      <div className="mb-4">
+        <SelectSearchResults />
+      </div>
+      <h2 className="text-xl font-bold mb-4">Destinos turísticos</h2>
+      <DestinationList />
     </div>
   );
 };

@@ -15,8 +15,8 @@ export const createDestination = async (destination) => {
 };
 
 // Función para obtener un destino turístico por su ID
-export const getDestinationById = async (id) => {
-  const response = await axios.get(`${BASE_URL}/destinations/${id}`);
+export const getDestinationById = async (_id) => {
+  const response = await axios.get(`${BASE_URL}/destinations/${_id}`);
   return response.data;
 };
 
@@ -26,4 +26,10 @@ export const searchDestinations = async (query) => {
     params: { name: query },
   });
   return response.data;
+};
+
+// delete
+export const deleteDestination = async (id) => {
+    const response = await axios.delete(`${BASE_URL}/destinations/${id}`);
+    return response.data;
 };

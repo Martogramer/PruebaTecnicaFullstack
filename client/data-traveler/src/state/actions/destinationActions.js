@@ -3,12 +3,14 @@ import {
     createDestination,
     getDestinationById,
     searchDestinations,
+    deleteDestination
   } from '../../services/api';
   import {
     FETCH_DESTINATIONS,
     ADD_DESTINATION,
     FETCH_DESTINATION,
     SEARCH_DESTINATIONS,
+    DELETE_DESTINATION_SUCCESS
   } from '../../types/destinationTypes';
   
   // Acción para obtener todos los destinos turísticos
@@ -24,8 +26,8 @@ import {
   };
   
   // Acción para obtener un destino turístico por su ID
-  export const fetchDestination = (id) => async (dispatch) => {
-    const destination = await getDestinationById(id);
+  export const fetchDestination = (_id) => async (dispatch) => {
+    const destination = await getDestinationById(_id);
     dispatch({ type: FETCH_DESTINATION, payload: destination });
   };
   
@@ -35,3 +37,8 @@ import {
     dispatch({ type: SEARCH_DESTINATIONS, payload: destinations });
   };
   
+  // accion para eliminar por id:
+  export const deleteDestinationByID = (_id) => async (dispatch) => {
+    const deleteDest = deleteDestination(_id);
+        dispatch({ type: DELETE_DESTINATION_SUCCESS, payload: deleteDest });
+  };

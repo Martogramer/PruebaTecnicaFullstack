@@ -31,7 +31,7 @@ const SelectSearchResults = ({ }) => {
 
       <ul>
         {filteredResults && filteredResults.map((destinations) => (
-          <li key={destinations.id}>{destinations.name}</li>
+          <li key={destinations._id}>{destinations.name}</li>
         ))}
       </ul>
     </div>
