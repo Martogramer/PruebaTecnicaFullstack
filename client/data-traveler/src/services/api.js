@@ -35,5 +35,5 @@ export const deleteDestination = async (id) => {
     return response.data;
   } catch (error) {
     console.error(error);
- }
+  }
 };

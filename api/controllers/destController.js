@@ -6,6 +6,7 @@ const getDestinations = async (req, res) => {
         res.status(200).json(destinations);
     } catch (error) {
         res.status(500).json({ message: error.message });
+        console.log(error.message)
     }
 };
 
