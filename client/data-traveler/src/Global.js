@@ -2,8 +2,9 @@ const styles = {
     whiteText: "text-white",
     blackText: "text-tertiary",
 
-    bgWhite: "bg-white",
     bgPrimary: "bg-primary",
+    bgWhite: "bg-white",
+    bgGray: "bg-gray-200",
 
 
     primaryBg: "bg-primary",
@@ -18,6 +19,7 @@ const styles = {
     fontBold: "font-bold",
     roundedXL: "rounded-xl",
     shadowMd: "shadow-md",
+    shadowXL: "shadow-xl",
 
     // Otros estilos
     bgClipPaddingBox: "bg-clip-padding-box",
