@@ -15,12 +15,17 @@ const DestinationList = ({ }) => {
   return (
     <ul>
       {destinationList.map((destination) => (
-        <React.Fragment>
-        <Link to={`/destinations/${destination._id}`}>
-          <li key={destination._id} >{destination.name}</li>
-        </Link> 
-        <button onClick={() => handleDelete(destination._id)}>Delete</button>
-      </React.Fragment>
+        <li key={destination._id} className="mb-2">
+          <Link to={`/destinations/${destination._id}`} className="text-blue-500 hover:underline">
+            {destination.name}
+          </Link>
+          <button
+            onClick={() => handleDelete(destination._id)}
+            className="ml-2 px-3 py-1 text-white bg-red-500 rounded-md hover:bg-red-600"
+          >
+            Delete
+          </button>
+        </li>
       ))}
     </ul>
   );

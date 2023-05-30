@@ -5,6 +5,8 @@ import DestinationList from '../components/features/DestinationList';
 import { fetchDestinations } from '../state/actions/destinationActions';
 import { selectDestinations } from '../state/selectors/destinationSelectors';
 import SelectSearchResults from '../components/features/SelectSearchResults';
+import styles from '../Global';
+import DestinationSearchList from '../components/features/DestinationSearchList';
 
 const DestinationContainer = ({ children }) => {
   const dispatch = useDispatch();
@@ -15,17 +17,16 @@ const DestinationContainer = ({ children }) => {
   }, [dispatch]);
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md p-4">
-      <h2 className="text-xl font-bold mb-4">Agregar</h2>
-      <div className="mb-4">
+    <div className={`${styles.boxClass} ${styles.section} ${styles.bgGradient} ${styles.roundedXL} ${styles.shadowMD} ${styles.p4} `}>
+      <div className={`${styles.mb4}`}>
         <DestinationForm />
       </div>
-      <h2 className="text-xl font-bold mb-4">Búsqueda</h2>
-      <div className="mb-4">
-        <SelectSearchResults />
+      <div className={`${styles.mb4} mt-4`}>
+        <DestinationSearchList dest={destinations}/>
+        {/* <SelectSearchResults /> */}
       </div>
-      <h2 className="text-xl font-bold mb-4">Destinos turísticos</h2>
-      <DestinationList />
+      {/* <h2 className={`${styles.textXL} ${styles.fontBold} ${styles.mb4}`}>Destinos turísticos</h2>
+      <DestinationList /> */}
     </div>
   );
 };

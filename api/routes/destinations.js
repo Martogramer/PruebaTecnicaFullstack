@@ -1,21 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const Destination = require('../controllers/destController');
+const {
+    getDestinations,
+    getDestinationById,
+    createDestination,
+    updateDestination,
+    deleteDestination,
+    upload
+} = require('../controllers/destController');
 
-// Ruta para obtener todos los destinos turísticos
-router.get('/', Destination.getDestinations);
-
-// Ruta para obtener un destino turístico por su ID
-router.get('/:id', Destination.getDestinationById);
-
-// Ruta para crear un nuevo destino turístico
-router.post('/', Destination.createDestination);
-
-// Ruta para actualizar un destino turístico
-router.patch('/:id', Destination.updateDestination);
-
-// Ruta para eliminar un destino
-router.delete('/:id', Destination.deleteDestination);
+router.get('/', getDestinations);
+router.get('/:id', getDestinationById);
+router.post('/', createDestination);
+router.patch('/:id', updateDestination);
+router.delete('/:id', deleteDestination);
 
 
 module.exports = router;
+
+// multer:  upload.array('images', 3),   -- se le agrega a la ruta de post

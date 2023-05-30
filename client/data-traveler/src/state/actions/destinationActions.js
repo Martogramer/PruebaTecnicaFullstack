@@ -26,8 +26,8 @@ import {
   };
   
   // Acción para obtener un destino turístico por su ID
-  export const fetchDestination = (_id) => async (dispatch) => {
-    const destination = await getDestinationById(_id);
+  export const fetchDestination = (id) => async (dispatch) => {
+    const destination = await getDestinationById(id);
     dispatch({ type: FETCH_DESTINATION, payload: destination });
   };
   
@@ -38,7 +38,7 @@ import {
   };
   
   // accion para eliminar por id:
-  export const deleteDestinationByID = (_id) => async (dispatch) => {
-    const deleteDest = deleteDestination(_id);
+  export const deleteDestinationByID = (id) => async (dispatch) => {
+    const deleteDest = deleteDestination(id);
         dispatch({ type: DELETE_DESTINATION_SUCCESS, payload: deleteDest });
   };
